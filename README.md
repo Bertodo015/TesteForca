@@ -29,7 +29,6 @@ O objetivo deste exercício é testar a lógica da classe `JogoDaForca` utilizan
 
 **Passos**:
 - Instancie a classe `JogoDaForca` com a palavra secreta "banana".
-- Verifique se a palavra secreta está oculta corretamente (deve ser exibida como "______").
 - Verifique se o número de tentativas é 6.
 - Verifique se a lista de letras chutadas está vazia.
 
