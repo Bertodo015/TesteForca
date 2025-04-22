@@ -182,13 +182,6 @@ Implemente o teste para garantir que o número de tentativas diminua corretament
 - Certifique-se de que os testes verifiquem não apenas o estado após cada ação, mas também se as exceções corretas são lançadas em casos de entradas inválidas.
 - Verifique a consistência dos dados, como tentativas e letras chutadas, após cada ação.
 
----
-
-## 🏅 **Conclusão**
-
-Neste exercício, você aprendeu a escrever testes unitários com Jest para garantir que a classe `JogoDaForca` funcione corretamente. Através desses testes, você pode verificar se a lógica do jogo, como chutes corretos e incorretos, reinício do jogo, vitória e derrota, entre outros, estão sendo executadas corretamente.
-
-Boa sorte e bons testes! 🚀
 
 ---
 
