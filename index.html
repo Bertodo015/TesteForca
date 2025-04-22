@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jogo da Forca</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Jogo da Forca</h1>
+    <p id="palavra" class="palavra"></p>
+    <form id="form-chute">
+      <input type="text" id="letra" maxlength="1" placeholder="Digite uma letra" required />
+      <button type="submit">Chutar</button>
+    </form>
+    <p id="tentativas"></p>
+    <p id="letras-chutadas"></p>
+    <p id="status"></p>
+    <button id="reiniciar">Reiniciar</button>
+  </div>
+
+  <script src="forca.js"></script>
+  <script>
+    let jogo;
+    //Palavra secreta hard coded
+    const palavraSecreta = 'LeandrABUasdasdo';
+
+    const entradaLetra = document.getElementById('letra');
+    const exibirPalavra = document.getElementById('palavra');
+    const exibirStatus = document.getElementById('status');
+    const exibirTentativas = document.getElementById('tentativas');
+    const letrasChutadasEl = document.getElementById('letras-chutadas');
+
+    function atualizarInterface() {
+      exibirPalavra.textContent = jogo.palavraOculta();
+      exibirTentativas.textContent = `Tentativas restantes: ${jogo.tentativasRestantes}`;
+      letrasChutadasEl.textContent = `Letras chutadas: ${jogo.letrasChutadas.join(', ')}`;
+      const estado = jogo.status();
+      if (estado === 'venceu') {
+        exibirStatus.textContent = 'Você venceu! 🎉';
+        entradaLetra.disabled = true;
+      } else if (estado === 'perdeu') {
+        exibirStatus.textContent = `Você perdeu! A palavra era "${jogo.palavra}". 😢`;
+        entradaLetra.disabled = true;
+      } else {
+        exibirStatus.textContent = 'Jogo em andamento...';
+      }
+    }
+
+    function iniciarJogo() {
+      jogo = new JogoDaForca(palavraSecreta);
+      entradaLetra.disabled = false;
+      entradaLetra.value = '';
+      entradaLetra.focus();
+      atualizarInterface();
+    }
+
+    document.getElementById('form-chute').addEventListener('submit', e => {
+      e.preventDefault();
+      const letra = entradaLetra.value;
+      if (letra && letra.length === 1 && letra.match(/[a-zA-Z]/)) {
+        jogo.chutar(letra);
+        entradaLetra.value = '';
+        entradaLetra.focus();
+        atualizarInterface();
+      }
+    });
+
+    document.getElementById('reiniciar').addEventListener('click', iniciarJogo);
+
+    iniciarJogo();
+  </script>
+</body>
+</html>
