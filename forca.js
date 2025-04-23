@@ -29,8 +29,7 @@ class JogoDaForca {
   }
 
   reiniciar(){
-    this.tentativasMaximas = tentativasMaximas;
-    this.tentativasRestantes = tentativasMaximas;
+    this.tentativasRestantes = this.tentativasMaximas;
     this.letrasChutadas = [];
     this.letrasCorretas = [];
   }
