@@ -80,3 +80,5 @@ class JogoDaForca {
     return 'jogando';
   }
 }
+
+module.exports = JogoDaForca
