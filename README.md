@@ -1,27 +1,15 @@
 
-# 📚 **Exercício de Testes Unitários: Jogo da Forca com Jest**
+# 📚 **Testes Unitários: Jogo da Forca com Jest**
 
-## 🧑‍💻 **Objetivo**
+## 🧑‍💻 **Link do site hospedado**
 
-O objetivo deste exercício é testar a lógica da classe `JogoDaForca` utilizando a ferramenta de testes unitários **Jest**. Você deverá escrever os testes para garantir que as funcionalidades da classe estejam corretas e funcionando conforme o esperado.
+
 
 ## 🚀 **Instruções**
 
-1. **Instale o Jest**: Caso ainda não tenha o Jest instalado no seu projeto, execute o seguinte comando:
+O aquivo da pasta .github executará testes automáticos para cada push e pull_request realizado. Irá instalar as dependências necessárias e rodar os testes para mostrar a funcionalidade dos casos de teste utilizados.
 
-   ```bash
-   npm install --save-dev jest
-   ```
-
-2. **Crie os testes**: Utilize o Jest para escrever testes unitários que validem o comportamento da classe `JogoDaForca`.
-
-3. **Executar os testes**: Para rodar os testes, utilize o seguinte comando:
-
-   ```bash
-   npm test
-   ```
-
-## 🧪 **Casos de Teste para Implementação**
+## 🧪 **Descrição dos Casos de Teste**
 
 ### 1. **Inicialização do Jogo**
 
@@ -32,10 +20,6 @@ O objetivo deste exercício é testar a lógica da classe `JogoDaForca` utilizan
 - Verifique se o número de tentativas é 6.
 - Verifique se a lista de letras chutadas está vazia.
 
-**Tarefa**:
-Implemente o teste para verificar esses comportamentos. Use o método `getPalavraOculta()` para verificar a palavra oculta e `getTentativasRestantes()` para as tentativas.
-
----
 
 ### 2. **Chute de Letra Correta**
 
@@ -48,10 +32,6 @@ Implemente o teste para verificar esses comportamentos. Use o método `getPalavr
 - Verifique se o número de tentativas permanece 6.
 - Verifique se a letra "a" está registrada na lista de letras chutadas.
 
-**Tarefa**:
-Implemente o teste para verificar se a letra correta é revelada e se o número de tentativas não é alterado.
-
----
 
 ### 3. **Chute de Letra Incorreta**
 
@@ -64,10 +44,6 @@ Implemente o teste para verificar se a letra correta é revelada e se o número 
 - Verifique se a letra "z" foi registrada na lista de letras chutadas.
 - Verifique se a palavra oculta não foi alterada.
 
-**Tarefa**:
-Implemente o teste para verificar se o número de tentativas diminui corretamente e se a letra incorreta foi registrada.
-
----
 
 ### 4. **Chute de Letra Repetida**
 
@@ -80,10 +56,6 @@ Implemente o teste para verificar se o número de tentativas diminui corretament
 - Verifique se a lista de letras chutadas contém a letra "a" apenas uma vez.
 - Verifique se o número de tentativas não foi alterado.
 
-**Tarefa**:
-Implemente o teste para garantir que a letra "a" seja registrada apenas uma vez e que o número de tentativas não diminua.
-
----
 
 ### 5. **Vitória do Jogo**
 
@@ -95,10 +67,6 @@ Implemente o teste para garantir que a letra "a" seja registrada apenas uma vez 
 - Verifique se a palavra secreta foi totalmente revelada como "banana".
 - Verifique se o jogo reconhece que o jogador venceu.
 
-**Tarefa**:
-Implemente o teste para verificar se o jogo reconhece a vitória corretamente quando todas as letras forem adivinhadas.
-
----
 
 ### 6. **Derrota do Jogo**
 
@@ -110,10 +78,6 @@ Implemente o teste para verificar se o jogo reconhece a vitória corretamente qu
 - Verifique se o número de tentativas chega a 0.
 - Verifique se o jogo reconhece a derrota.
 
-**Tarefa**:
-Implemente o teste para garantir que o jogo reconheça corretamente a derrota quando as tentativas acabarem.
-
----
 
 ### 7. **Reinício do Jogo**
 
@@ -127,10 +91,6 @@ Implemente o teste para garantir que o jogo reconheça corretamente a derrota qu
 - Verifique se o número de tentativas é restaurado para 6.
 - Verifique se a lista de letras chutadas está vazia.
 
-**Tarefa**:
-Implemente o teste para garantir que o jogo reinicie corretamente e volte ao estado inicial.
-
----
 
 ### 8. **Validação de Entrada de Letra**
 
@@ -143,10 +103,7 @@ Implemente o teste para garantir que o jogo reinicie corretamente e volte ao est
 - Tente chutar um caractere especial (como "#").
 - Verifique se o jogo rejeita essas entradas e lança uma exceção com a mensagem "Entrada inválida".
 
-**Tarefa**:
-Implemente o teste para verificar se o jogo lida corretamente com entradas inválidas.
 
----
 
 ### 9. **Verificação de Maiúsculas e Minúsculas**
 
@@ -157,10 +114,6 @@ Implemente o teste para verificar se o jogo lida corretamente com entradas invá
 - Chute a letra "b" em maiúscula e depois em minúscula.
 - Verifique se a palavra oculta é atualizada corretamente e se a letra "b" foi registrada apenas uma vez.
 
-**Tarefa**:
-Implemente o teste para garantir que o jogo seja insensível a maiúsculas e minúsculas.
-
----
 
 ### 10. **Verificar Tentativas Restantes**
 
@@ -170,19 +123,3 @@ Implemente o teste para garantir que o jogo seja insensível a maiúsculas e min
 - Instancie a classe `JogoDaForca` com a palavra "banana".
 - Chute algumas letras incorretas.
 - Verifique se o número de tentativas diminui corretamente.
-
-**Tarefa**:
-Implemente o teste para garantir que o número de tentativas diminua corretamente após um chute incorreto.
-
----
-
-## 🧑‍🏫 **Dicas para Implementação dos Testes**
-
-- Utilize os métodos de acesso, como `getPalavraOculta()`, `getTentativasRestantes()`, `getLetrasChutadas()`, etc., para verificar os estados internos do jogo.
-- Certifique-se de que os testes verifiquem não apenas o estado após cada ação, mas também se as exceções corretas são lançadas em casos de entradas inválidas.
-- Verifique a consistência dos dados, como tentativas e letras chutadas, após cada ação.
-
-
----
-
-Se você precisar de mais informações ou detalhes sobre a implementação, não hesite em perguntar!
