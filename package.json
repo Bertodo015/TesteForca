@@ -4,7 +4,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "CI=false && mkdir -p dist && cp index.html forca.js dist/"
+    "build": "CI=false && mkdir -p dist && cp index.html forca.js public/"
   },
   "devDependencies": {
     "esbuild": "^0.25.6"
